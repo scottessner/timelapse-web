@@ -8,4 +8,8 @@ class Camera extends Eloquent {
 	public function frames() {
 		return $this->hasMany('Frame');
 	}
+
+	public function project() {
+		return $this->belongsTo('Project');
+	}
 }

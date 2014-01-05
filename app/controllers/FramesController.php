@@ -36,7 +36,7 @@ class FramesController extends BaseController {
 		$frame = new Frame;
 		$frame->imageBytes = Input::get('imageBytes', null);
 		$frame->captureTime = Input::get('captureTime', null);
-		$frame->frameSourceID = Input::get('frameSourceID', null);
+		$frame->camera_id = Input::get('camera_id', null);
 		$frame->save();
 
 		//return var_dump($frame);

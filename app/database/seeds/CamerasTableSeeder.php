@@ -8,7 +8,7 @@ class CamerasTableSeeder extends Seeder {
 		// DB::table('cameras')->truncate();
 
 		$cameras = array(
-
+			
 		);
 
 		// Uncomment the below to run the seeder
