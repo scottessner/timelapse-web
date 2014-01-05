@@ -26,7 +26,7 @@ Route::resource('frames', 'FramesController');
 Route::get('frames/showRaw/{id}', 'FramesController@showRaw');
 
 Route::resource('cameras', 'CamerasController');
-Route::get('cameras/addnewcamera' function(){
+Route::get('cameras/addnewcamera', function(){
 	$project = new Project;
 	$project->name = 'Essner - C&H Construction';
 	$project->description = 'Building a new home';
@@ -34,6 +34,8 @@ Route::get('cameras/addnewcamera' function(){
 
 	$camera = new Camera;
 	$camera->project()->associate($project);
+
+	return View::make('projects');
 });
 
 Route::resource('projects', 'ProjectsController');
