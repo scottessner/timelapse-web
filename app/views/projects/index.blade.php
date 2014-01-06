@@ -4,9 +4,11 @@
 
 @foreach($projects as $project)
 	<ul>
-		<h1>{{$project->name}}</h1>
-		@foreach($project->cameras() as $camera)
-			<h2>{{$camera->id}}</h2>
+		<h2>{{$project->name}}</h2>
+		<p>{{$project->description}}</p>
+		<h3>Cameras</h3>
+		@foreach($project->cameras()->get() as $camera)
+			<p>{{$camera->id}}</p>
 		@endforeach
 	</ul>
 @endforeach
