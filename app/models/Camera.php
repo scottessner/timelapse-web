@@ -12,4 +12,8 @@ class Camera extends Eloquent {
 	public function project() {
 		return $this->belongsTo('Project');
 	}
+
+	public function currentFrame() {
+		return $this->frames()->orderby('captureTime','desc')->first();
+	}
 }

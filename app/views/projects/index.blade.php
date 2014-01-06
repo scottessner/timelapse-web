@@ -8,7 +8,7 @@
 		<p>{{$project->description}}</p>
 		<h3>Cameras</h3>
 		@foreach($project->cameras()->get() as $camera)
-			<p>{{$camera->id}}</p>
+			<p><img src={{URL::action('FramesController@show',array($camera->currentFrame()->id))}} height=200/></p>
 		@endforeach
 	</ul>
 @endforeach
