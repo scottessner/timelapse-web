@@ -26,8 +26,8 @@ class Frame extends Eloquent {
 			$fontsize = 10;
 			$borderwidth = 5;
 
-			//$title = DateTime::createFromFormat('Y/m/d H:i:s', $frame->captureTime);
-			$title = $this->captureTime;
+			$title = date('Y/m/d H:i:s', strtotime($this->captureTime));
+			//$title = $this->captureTime;
 			$dims = imagettfbbox($fontsize, 0, $font, $title);
 
 			$titlewidth = ($dims[4]-$dims[6])+2*$borderwidth;
