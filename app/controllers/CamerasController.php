@@ -80,7 +80,13 @@ class CamerasController extends BaseController {
 	{
 		$camera = Camera::Find($id);
 		$frame = $camera->frames()->orderby('captureTime','desc')->first();
-		return URL->to($frame);
+		return $frame;
+	}
+
+	public function currentFrameURL($id)
+	{
+		$frame = currentFrame($id);
+		return URL::action('FramesController@show',array($frame->id));
 	}
 
 }
