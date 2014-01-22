@@ -26,7 +26,7 @@ Route::resource('frames', 'FramesController');
 Route::get('frames/showRaw/{id}', 'FramesController@showRaw');
 
 Route::resource('cameras', 'CamerasController');
-Route::get('cameras/{id}/currentFrameURL' 'CamerasController@currentFrameURL')
+Route::get('cameras/{id}/currentFrameURL', 'CamerasController@currentFrameURL');
 Route::get('addnewcamera', function(){
 	$project = new Project;
 	$project->name = 'Essner - C&H Construction';
