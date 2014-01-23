@@ -80,7 +80,7 @@ class CamerasController extends BaseController {
 	{
 		$camera = Camera::Find($id);
 		$frame = $camera->currentFrame();
-		$response = Response::make($frame->imageRaw(), 200);
+		$response = Response::make($frame->image(), 200);
 		$response->headers->set('Content-Type','image/jpeg');
 		return $response;
 	}
