@@ -80,7 +80,9 @@ class CamerasController extends BaseController {
 	{
 		$camera = Camera::Find($id);
 		$frame = $camera->currentFrame();
-		return Redirect::to('FramesController@show',array($frame->id));
+		$response = Response::make($frame->imageRaw(), 200);
+		$response->headers->set('Content-Type','image/jpeg');
+		return $response;
 	}
 
 	public function currentFrameURL($id)
